@@ -1,0 +1,26 @@
+/* Pseudo-element ::after jako linia podkreślenia */
+.main-navigation .menu-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 0;                 /* zaczynamy od szerokości 0 */
+  height: 2px;              /* grubość linii */
+  background: white;        /* kolor linii */
+  transition: width 0.3s ease;  /* płynna zmiana szerokości */
+}
+
+/* Na hover rozciągamy linię do pełnej szerokości elementu */
+.main-navigation .menu-item a:hover::after,
+.main-navigation .menu-item a:focus::after {
+  width: 100%;
+}
+
+/* animacja gdy link ma klasę .active */
+.main-navigation .menu-item a.active::after {
+  width: 100%;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+	margin: 0 0 0 2rem;
+}
